@@ -41,7 +41,7 @@ function init() {
                 <button class="action-btn btn-start" onclick="startQuiz('weekly', ${i})">
                     <span>📝 Quiz</span>
                 </button>
-                <a href="pdfs/esd_${i}.pdf" class="action-btn btn-pdf" target="_blank">
+                <a href="esd_${i}.pdf" class="action-btn btn-pdf" target="_blank">
                     <span>📄 PDF</span>
                 </a>
             </div>
