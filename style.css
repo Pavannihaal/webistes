@@ -1,0 +1,428 @@
+/* CSS Variables for Premium Design System */
+:root {
+    --primary-color: #2e7d32; /* Eco Green */
+    --primary-light: #4caf50;
+    --secondary-color: #81c784;
+    --background-gradient: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-main: #1b5e20;
+    --text-muted: #4e7d52;
+    --white: #ffffff;
+    --error: #d32f2f;
+    --success: #388e3c;
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-main);
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Glassmorphism Card */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+p.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Screens */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Buttons and Controls */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn small {
+    font-weight: 400;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: rgba(46, 125, 50, 0.05);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.full-width-btn {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-divider {
+    text-align: center;
+    position: relative;
+    margin: 30px 0;
+}
+
+.section-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(46, 125, 50, 0.1);
+}
+
+.section-divider span {
+    position: relative;
+    background: #fff;
+    padding: 0 15px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Weekly Section */
+.weekly-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.week-card {
+    background: white;
+    border: 1px solid rgba(46, 125, 50, 0.2);
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.week-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    border-color: var(--primary-color);
+}
+
+.week-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.week-actions {
+    display: grid;
+    gap: 8px;
+}
+
+.action-btn {
+    padding: 8px 5px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.btn-start {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-pdf {
+    background: #f1f8e9;
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-start:hover { background: var(--primary-light); }
+.btn-pdf:hover { background: var(--secondary-color); color: white; }
+
+/* Select Styling */
+.week-select-container {
+    margin: 10px 0;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid var(--secondary-color);
+    background: white;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+/* Question Screen */
+.progress-container {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.question-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.options-container {
+    display: grid;
+    gap: 12px;
+}
+
+.option {
+    padding: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    text-align: left;
+    background: white;
+    width: 100%;
+}
+
+.option:hover {
+    border-color: var(--primary-color);
+    background: rgba(46, 125, 50, 0.02);
+}
+
+.option.selected {
+    border-color: var(--primary-color);
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--primary-color);
+}
+
+/* Result Screen */
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    font-weight: 800;
+}
+
+.score-value {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.score-circle span:last-child {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.result-detail {
+    margin-top: 30px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.result-item {
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: white;
+    border-left: 5px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.result-item.correct { border-left-color: var(--success); }
+.result-item.wrong { border-left-color: var(--error); }
+
+.res-q { font-weight: 600; margin-bottom: 5px; display: block; }
+.res-a { font-size: 0.9rem; }
+
+.correct-ans { color: var(--success); font-weight: 600; }
+.wrong-ans { color: var(--error); font-weight: 600; }
+
+/* Custom Scrollbar */
+.result-detail::-webkit-scrollbar {
+    width: 6px;
+}
+.result-detail::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Quiz Navigation */
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.exit-btn {
+    background: #ffebee;
+    color: var(--error);
+    border: 1px solid #ffcdd2;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.exit-btn:hover {
+    background: var(--error);
+    color: white;
+}
+
+#question-number {
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.btn-exit-portal {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.btn-exit-portal:hover {
+    opacity: 1;
+    color: var(--error);
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 25px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
